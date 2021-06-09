@@ -153,7 +153,8 @@ class addNewsFragment : Fragment(), DatePickerDialog.OnDateSetListener,
             Toast.makeText(requireContext(), "Agree to the Conditions", Toast.LENGTH_LONG).show()
         } else {
 
-            Log.d("value", headline.toString())
+          //  Log.d("value", headline.toString())
+            Log.d("value", headline)
 //            Toast.makeText(requireContext(),headline,Toast.LENGTH_LONG).show()
             uploadToDB(headline, news, mandal, date, moreDetails)
         }
@@ -200,7 +201,7 @@ class addNewsFragment : Fragment(), DatePickerDialog.OnDateSetListener,
                         val prettyJson = gson.toJson(
                             JsonParser().parse(
                                 response.body()
-                                ?.string())
+                                    ?.string())
                         )
 
                         Log.d("Pretty Printed JSON :", prettyJson)
